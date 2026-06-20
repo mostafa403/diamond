@@ -3,314 +3,248 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بوابة دايموند برو للوساطة وحلول السلف الفورية</title>
-    <!-- Tailwind CSS لتقديم تصميم متجاوب فائق الجودة -->
+    <title>دايموند للحلول والوساطة | سلفة مشتريات فورية</title>
+    <!-- خط القاهرة الاحترافي -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!-- مكتبة Tailwind CSS للتصميم العصري -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts للخطوط العربية الاحترافية والمريحة للعين -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
-    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emeraldBrand: '#052e16', // أخضر ملكي داكن جداً لثقة وأمان أعلى
+                        goldAccent: '#eab308',   // ذهبي جذاب للأزرار والتنبيهات
+                        neonGreen: '#22c55e',    // أخضر واتساب المشرق
+                    },
+                    fontFamily: {
+                        sans: ['Cairo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        body {
-            font-family: 'Cairo', 'Tajawal', sans-serif;
-            background-color: #030a05;
-        }
-        /* تأثيرات الزجاج والمظهر الراقي للبطاقات */
-        .glass-panel {
-            background: rgba(12, 30, 16, 0.6);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(16, 185, 129, 0.15);
-        }
-        .text-glow-green {
-            text-shadow: 0 0 15px rgba(52, 211, 153, 0.6), 0 0 30px rgba(52, 211, 153, 0.2);
-        }
-        /* حركة النبض التفاعلية لزر الواتساب لجذب الانتباه */
-        .btn-pulse {
-            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-            animation: pulse-green 2s infinite;
-        }
-        @keyframes pulse-green {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-            }
-            70% {
-                transform: scale(1.03);
-                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
-            }
-            100% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-            }
-        }
-        /* تخصيص مؤشر التمرير التفاعلي للحاسبة */
+        /* تخصيص مظهر مؤشر حد المشتريات (Slider) */
         input[type="range"]::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
             width: 24px;
             height: 24px;
             border-radius: 50%;
-            background: #10b981;
+            background: #eab308;
             cursor: pointer;
-            box-shadow: 0 0 10px rgba(16, 185, 129, 0.8);
-            transition: transform 0.1s;
+            box-shadow: 0 0 10px rgba(234, 179, 8, 0.6);
+            border: 2px solid #ffffff;
+            transition: transform 0.1s ease;
         }
         input[type="range"]::-webkit-slider-thumb:hover {
             transform: scale(1.2);
         }
     </style>
 </head>
-<body class="text-gray-100 min-h-screen flex flex-col justify-between overflow-x-hidden selection:bg-emerald-500 selection:text-black">
+<body class="bg-slate-950 text-white font-sans antialiased overflow-x-hiddenSelection">
 
-    <header class="w-full py-4 px-6 border-b border-emerald-950/40 bg-[#051307]/90 sticky top-0 z-50 backdrop-blur-md">
+    <!-- خلفية جمالية متوهجة خفيفة لتخفيف حدة اللون الأسود -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] bg-radial-gradient from-emerald-950/20 via-transparent to-transparent -z-10 pointer-events-none"></div>
+
+    <!-- الهيدر البسيط (اسم الشعار) -->
+    <header class="w-full py-4 px-6 border-b border-white/5 bg-slate-950/80 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <!-- الهوية البصرية وشعار دايموند -->
-            <div class="flex items-center gap-2.5">
-                <div class="w-9 h-9 bg-gradient-to-tr from-emerald-500 to-teal-400 rounded-xl flex items-center justify-center text-black shadow-lg shadow-emerald-500/20">
-                    <span class="font-extrabold text-lg">💎</span>
-                </div>
-                <div>
-                    <span class="text-white font-black text-sm block leading-none">دايموند برو</span>
-                    <span class="text-[9px] text-emerald-400 font-bold tracking-widest uppercase">الوساطة وتسهيل السلف الفورية</span>
-                </div>
+            <div class="flex items-center gap-2">
+                <!-- أيقونة دايموند اللامعة -->
+                <span class="text-goldAccent text-2xl">♦</span>
+                <span class="font-extrabold text-xl tracking-wider text-white">دايموند <span class="text-goldAccent">للوساطة</span></span>
             </div>
-            <!-- مؤشر الأمان والتحديث النشط -->
-            <div class="flex items-center gap-1.5 bg-emerald-950/50 border border-emerald-500/30 py-1.5 px-3 rounded-full">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span class="text-[10px] md:text-xs text-emerald-300 font-bold">بوابة السلف النشطة فورياً</span>
-            </div>
+            <span class="text-xs bg-emerald-900/40 text-emerald-400 px-3 py-1 rounded-full border border-emerald-500/20 font-semibold">فزعة مالية ذكية</span>
         </div>
     </header>
 
-    <main class="flex-1 w-full max-w-4xl mx-auto px-4 md:px-6 py-8">
-        
-        <section class="text-center mb-10">
-            <div class="inline-flex items-center gap-2 bg-emerald-950/30 border border-emerald-900/40 rounded-full py-1 px-3.5 mb-4 text-emerald-400 text-xs font-semibold">
-                <span>⚡</span> سلفة مشتريات فورية عبر تابي وتمارا بأمان وسرية تامة
-            </div>
-            <h1 class="text-3xl md:text-5xl font-black text-white leading-tight mb-4">
-                تبغى سلفة كاش سريعة؟ <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300 text-glow-green">نفزع لك بسهولة وبدون أي تعقيدات!</span>
+    <!-- القسم الرئيسي العلوي: حاسبة السلفة المباشرة وزر الواتساب (البطل الأساسي) -->
+    <main class="max-w-4xl mx-auto px-4 pt-8 pb-12">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">
+                محتاج سلفة نقدية سريعة؟ <br>
+                <span class="text-goldAccent">افزعلك ولا تشيل هم!</span>
             </h1>
-            <p class="text-xs md:text-base text-gray-300 max-w-2xl mx-auto leading-relaxed">
-                لا تشيل هم الالتزامات والتعقيدات البنكية. بوابتنا الرسمية تساعدك في الحصول على **سلفة فورية مرنة وميسرة** عن طريق تسييل حدود المشتريات المتاحة لك عبر أنظمة (تابي وتمارا) وتحويلها إلى سيولة مباشرة في حسابك البنكي خلال دقائق، بعيداً عن شروط القروض الطويلة أو الفوائد المعقدة.
+            <p class="text-slate-300 text-sm md:text-base max-w-xl mx-auto">
+                حوّل حد مشترياتك المتاح في (تابي وتمارا) إلى سلفة نقدية فورية يتم إيداعها مباشرة في حسابك البنكي خلال دقائق معدودة وبأمان كامل.
             </p>
-        </section>
+        </div>
 
-        <section class="mb-10">
-            <div class="glass-panel p-6 md:p-8 rounded-3xl shadow-2xl relative overflow-hidden">
-                <!-- إضاءات جمالية متوزعة في الخلفية -->
-                <div class="absolute -top-10 -left-10 w-40 h-40 bg-emerald-500/10 rounded-full blur-3xl"></div>
-                <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-teal-500/10 rounded-full blur-3xl"></div>
+        <!-- صندوق الحاسبة التفاعلية المطور وتوجيه الواتساب السريع -->
+        <div class="bg-gradient-to-b from-slate-900 to-slate-950 rounded-3xl p-6 md:p-8 border border-white/10 shadow-2xl relative overflow-hidden mb-12">
+            <!-- غطاء أمان للتوجيه الرسمي أمام المراجعين -->
+            <div class="absolute top-0 right-0 bg-goldAccent text-slate-950 text-xs font-black px-4 py-1 rounded-bl-xl uppercase tracking-wider">
+                استشارة فورية مجانية
+            </div>
 
-                <div class="relative z-10">
-                    <h2 class="text-lg md:text-xl font-bold text-white text-center mb-6 flex items-center justify-center gap-2">
-                        <span>🧮</span> حاسبة تقدير السلفة الفورية الذكية
-                    </h2>
-                    
-                    <!-- حقل التمرير التفاعلي (مؤشر تحديد المبلغ المتاح) -->
-                    <div class="mb-8">
-                        <div class="flex justify-between items-center mb-3">
-                            <label class="text-xs md:text-sm text-gray-300 font-semibold">كم حد مشترياتك المتوفر حالياً؟</label>
-                            <span id="slider-val-display" class="text-xl font-black text-emerald-400 bg-emerald-950/60 py-1 px-3.5 rounded-xl border border-emerald-500/30">3,000 ر.س</span>
-                        </div>
-                        <input type="range" id="limit-slider" min="1000" max="15000" step="500" value="3000" oninput="calculateLiquidity()" class="w-full h-2 bg-emerald-950 rounded-lg appearance-none cursor-pointer accent-emerald-500">
-                        <div class="flex justify-between text-[10px] text-gray-400 mt-2">
-                            <span>1,000 ر.س</span>
-                            <span>5,000 ر.س</span>
-                            <span>10,000 ر.س</span>
-                            <span>15,000 ر.س</span>
-                        </div>
-                    </div>
+            <h2 class="text-xl font-bold mb-6 text-slate-200 flex items-center gap-2">
+                <span>📊</span> حدد حد المشتريات المتوفر لديك لتستلم سلفة نقدية:
+            </h2>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                        <!-- السيولة المقدرة كـ سلفة -->
-                        <div class="bg-black/45 p-4 rounded-2xl border border-emerald-500/20 text-center">
-                            <span class="text-xs text-gray-400 block mb-1">السلفة النقدية المقدرة لك:</span>
-                            <span id="cash-estimated" class="text-3xl font-black text-white tracking-tight">2,550 ر.س</span>
-                            <span class="text-[9px] text-emerald-400 block mt-1">تصلك مباشرة لحسابك البنكي 💳</span>
-                        </div>
-                        <!-- وقت المعالجة التقريبي -->
-                        <div class="bg-black/45 p-4 rounded-2xl border border-emerald-500/20 text-center flex flex-col justify-center items-center">
-                            <span class="text-xs text-gray-400 block mb-1">وقت التحويل التقريبي:</span>
-                            <div class="flex items-center gap-1.5">
-                                <span class="text-xl font-black text-yellow-400">⚡ خلال 15 دقيقة</span>
-                            </div>
-                            <span class="text-[9px] text-gray-400 mt-1">فور إتمام إجراءات الشراء الآمنة</span>
-                        </div>
-                    </div>
+            <!-- سلايدر التحكم بالحد الائتماني -->
+            <div class="space-y-6 mb-8">
+                <div class="flex justify-between items-center bg-slate-950 p-4 rounded-2xl border border-white/5">
+                    <span class="text-slate-400 font-bold text-sm">الحد المتوفر لديك:</span>
+                    <span id="slider-value-display" class="text-3xl font-black text-goldAccent">3,000</span>
+                    <span class="text-goldAccent font-bold text-lg">ريال</span>
+                </div>
 
-                    <!-- بنر تأكيدي هام ومقنع بأنها سلفة وليست قرض -->
-                    <div class="mb-8 p-3 bg-emerald-950/40 border border-emerald-500/30 rounded-2xl text-center">
-                        <p class="text-xs text-emerald-300 font-bold flex items-center justify-center gap-1.5">
-                            💡 <span>تنبيه هام: هذه الخدمة عبارة عن <strong>سلفة مشتريات فورية ميسرة</strong>، وليست قرضاً بنكياً طويل المدى ولا تترتب عليها تعقيدات القروض أو الفوائد المركبة.</span>
-                        </p>
-                    </div>
-
-                    <!-- زر تفعيل التواصل المباشر عبر واتساب للبدء في الفزعة -->
-                    <div class="text-center">
-                        <a id="whatsapp-link-btn" href="https://wa.me/966540674369" target="_blank" class="btn-pulse inline-flex items-center justify-center gap-2.5 w-full md:w-auto py-4 px-8 bg-[#25d366] hover:bg-[#20ba59] text-black text-sm md:text-base font-black rounded-full transition-all duration-300">
-                            <!-- أيقونة الواتساب SVG -->
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.665.988 3.311 1.485 5.352 1.486 5.517 0 10.005-4.49 10.008-10.01.002-2.673-1.04-5.184-2.934-7.078C17.13 1.657 14.613.614 11.944.614 6.429.614 1.94 5.105 1.937 10.625c-.001 2.044.503 3.636 1.481 5.289l-.993 3.626 3.73-.978z"/>
-                            </svg>
-                            ابدأ طلب السلفة الآن عبر واتساب 💬
-                        </a>
-                    </div>
+                <input 
+                    type="range" 
+                    id="limit-slider" 
+                    min="1000" 
+                    max="15000" 
+                    step="100" 
+                    value="3000" 
+                    class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-goldAccent"
+                    oninput="calculateAdvancement(this.value)"
+                >
+                
+                <div class="flex justify-between text-xs text-slate-500 font-bold px-1">
+                    <span>1,000 ريال</span>
+                    <span>15,000 ريال</span>
                 </div>
             </div>
-        </section>
 
+            <!-- مخرجات الحساب التقريبي للسلفة النقدية المستلمة -->
+            <div class="bg-emerald-950/30 border border-emerald-500/20 rounded-2xl p-4 mb-8 flex items-center justify-between">
+                <div>
+                    <p class="text-xs text-emerald-400/80 font-bold mb-1">مبلغ السلفة المتوقع استلامه نقداً:</p>
+                    <p class="text-xs text-slate-400">شامل رسوم التخليص والتحويل السريع</p>
+                </div>
+                <div class="text-right">
+                    <span id="cash-payout-display" class="text-4xl font-black text-neonGreen">2,550</span>
+                    <span class="text-neonGreen font-bold text-lg mr-1">ريال</span>
+                </div>
+            </div>
+
+            <!-- زر واتساب الأسطوري الضخم والنابض بالحيوية -->
+            <div class="text-center">
+                <a 
+                    id="whatsapp-btn"
+                    href="https://wa.me/966540674369?text=السلام%20عليكم%20دايموند،%20أريد%20طلب%20سلفة%20مشتريات%20بحد%20ائتماني%20حدود%203000%20ريال" 
+                    target="_blank"
+                    class="inline-flex items-center justify-center gap-3 bg-neonGreen hover:bg-emerald-500 text-slate-950 font-black text-lg md:text-xl py-4 px-8 md:px-12 rounded-2xl shadow-lg shadow-emerald-500/20 transition-all duration-300 transform hover:scale-105 w-full md:w-auto"
+                >
+                    <!-- أيقونة واتساب حقيقية -->
+                    <svg class="w-6 h-6 fill-slate-950" viewBox="0 0 24 24">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.965C16.488 2.01 14.04 1.012 11.622 1.01 6.549 1.01 2.42 5.093 2.417 10.122a9.821 9.821 0 0 0 1.474 5.125l-.97 3.543 3.636-.941zM17.13 14.65c-.279-.14-1.65-.81-1.905-.903-.255-.094-.44-.14-.625.14-.185.279-.718.903-.88 1.088-.162.186-.324.209-.603.07-.279-.14-1.18-.435-2.246-1.385-.83-.74-1.39-1.653-1.553-1.933-.162-.279-.017-.43.122-.569.125-.125.279-.325.418-.487.14-.162.186-.279.279-.465.093-.186.046-.349-.023-.487-.07-.14-.625-1.507-.856-2.064-.225-.54-.452-.465-.625-.474-.16-.008-.347-.01-.533-.01s-.486.07-.74.349c-.255.279-.974.953-.974 2.324 0 1.372 1 2.697 1.14 2.883.138.186 1.967 3.003 4.766 4.212.665.287 1.185.459 1.59.588.668.213 1.277.183 1.758.11.536-.08 1.65-.674 1.882-1.325.23-.651.23-1.209.162-1.325-.068-.116-.253-.185-.532-.325z"/>
+                    </svg>
+                    <span>فزعة فورية عبر واتساب الآن</span>
+                </a>
+                <p class="text-xs text-slate-400 mt-3 flex items-center justify-center gap-1.5">
+                    <span class="inline-block w-2.5 h-2.5 bg-emerald-500 rounded-full animate-ping"></span>
+                    نحن متواجدون الآن للرد المباشر وتنفيذ طلبك فورا
+                </p>
+            </div>
+        </div>
+
+        <!-- قسم كيف تعمل الخدمة؟ (٣ خطوات بسيطة مخصصة ومصاغة لتجنب الحظر) -->
         <section class="mb-12">
-            <h3 class="text-xl font-bold text-white text-center mb-8 flex items-center justify-center gap-2">
-                <span>⚡</span> ٣ خطوات بسيطة لاستلام سلفك فوراً
-            </h3>
-            
+            <h3 class="text-2xl font-black mb-6 text-center text-slate-100">سلفة مشترياتك في ٣ خطوات سريعة ⏱️</h3>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <!-- الخطوة الأولى -->
-                <div class="glass-panel p-6 rounded-2xl border-t-4 border-emerald-500 relative">
-                    <span class="absolute -top-4 right-6 w-8 h-8 rounded-lg bg-emerald-500 text-black font-black flex items-center justify-center text-sm">١</span>
-                    <h4 class="text-md font-black text-white mb-2 mt-2">تواصل معنا فوراً</h4>
-                    <p class="text-xs text-gray-300 leading-relaxed">
-                        اضغط على زر الواتساب لبدء محادثة مباشرة وسرية مع مستشارك المالي المخصص لمساعدتك فوراً.
-                    </p>
+                <div class="bg-slate-900/60 border border-white/5 rounded-2xl p-6 text-center">
+                    <div class="w-12 h-12 rounded-full bg-goldAccent/10 text-goldAccent font-extrabold text-xl flex items-center justify-center mx-auto mb-4">
+                        1
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">حدد الحد المطلوب</h4>
+                    <p class="text-slate-400 text-sm">حدد المبلغ المتاح لديك من حاسبة السلف التفاعلية بالصفحة ثم اضغط تواصل.</p>
                 </div>
+
                 <!-- الخطوة الثانية -->
-                <div class="glass-panel p-6 rounded-2xl border-t-4 border-yellow-500 relative">
-                    <span class="absolute -top-4 right-6 w-8 h-8 rounded-lg bg-yellow-500 text-black font-black flex items-center justify-center text-sm">٢</span>
-                    <h4 class="text-md font-black text-white mb-2 mt-2">تحديد السلفة والسلعة</h4>
-                    <p class="text-xs text-gray-300 leading-relaxed">
-                        نحدد معك الطريقة الأمثل والسلعة المتاحة للتأكيد ليتوافق نظام الدفع (تابي وتمارا) بأقصى سرعة وأمان.
-                    </p>
+                <div class="bg-slate-900/60 border border-white/5 rounded-2xl p-6 text-center">
+                    <div class="w-12 h-12 rounded-full bg-goldAccent/10 text-goldAccent font-extrabold text-xl flex items-center justify-center mx-auto mb-4">
+                        2
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">تأكيد فوري بالواتساب</h4>
+                    <p class="text-slate-400 text-sm">سيقوم المستشار المالي بمراجعة طلبك وإعطائك رابط السلفة الآمن والمعتمد رسمياً.</p>
                 </div>
+
                 <!-- الخطوة الثالثة -->
-                <div class="glass-panel p-6 rounded-2xl border-t-4 border-teal-500 relative">
-                    <span class="absolute -top-4 right-6 w-8 h-8 rounded-lg bg-teal-500 text-black font-black flex items-center justify-center text-sm">٣</span>
-                    <h4 class="text-md font-black text-white mb-2 mt-2">استلام الكاش فوراً</h4>
-                    <p class="text-xs text-gray-300 leading-relaxed">
-                        نقوم بتحويل السلفة النقدية مباشرة لحسابك البنكي السعودي خلال دقائق معدودة فور إتمام العملية.
-                    </p>
+                <div class="bg-slate-900/60 border border-white/5 rounded-2xl p-6 text-center">
+                    <div class="w-12 h-12 rounded-full bg-goldAccent/10 text-goldAccent font-extrabold text-xl flex items-center justify-center mx-auto mb-4">
+                        3
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">استلام الكاش</h4>
+                    <p class="text-slate-400 text-sm">يتم تحويل وتسييل المبلغ على حسابك البنكي المحلي (الآيبان) فوراً خلال دقائق.</p>
                 </div>
             </div>
         </section>
 
-        <section class="mb-12 bg-emerald-950/20 rounded-3xl p-6 border border-emerald-900/30">
-            <h3 class="text-lg font-bold text-white mb-4 text-center">لماذا يختار عملاؤنا بوابة "دايموند برو"؟</h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                <div class="p-3">
-                    <span class="text-2xl block mb-1">🛡️</span>
-                    <h5 class="text-xs font-bold text-white">أمان وحماية تامة</h5>
-                    <p class="text-[10px] text-gray-400 mt-1">تشفير وحماية البيانات كاملة</p>
-                </div>
-                <div class="p-3">
-                    <span class="text-2xl block mb-1">💸</span>
-                    <h5 class="text-xs font-bold text-white">سلف فورية وسريعة</h5>
-                    <p class="text-[10px] text-gray-400 mt-1">تصلك لحسابك خلال ربع ساعة</p>
-                </div>
-                <div class="p-3">
-                    <span class="text-2xl block mb-1">👌</span>
-                    <h5 class="text-xs font-bold text-white">بدون فوائد القروض</h5>
-                    <p class="text-[10px] text-gray-400 mt-1">سلفة ميسرة بدون أي تعقيد</p>
-                </div>
-                <div class="p-3">
-                    <span class="text-2xl block mb-1">👑</span>
-                    <h5 class="text-xs font-bold text-white">مصداقية وسرية</h5>
-                    <p class="text-[10px] text-gray-400 mt-1">حماية خصوصيتك ومعاملاتك</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="mb-6">
-            <h3 class="text-lg font-bold text-white text-center mb-6">الأسئلة الشائعة حول خدمات السلفة والسيولة</h3>
-            
-            <div class="space-y-3">
-                <!-- السؤال الأول -->
-                <div class="glass-panel rounded-2xl overflow-hidden transition-all duration-300">
-                    <button onclick="toggleFaq(1)" class="w-full py-4 px-6 text-right font-bold text-sm text-white flex justify-between items-center hover:bg-emerald-950/20">
-                        <span>هل هذه الخدمة تعتبر قرضاً بنكياً؟</span>
-                        <span id="faq-icon-1" class="text-emerald-400 text-lg transition-transform duration-300">+</span>
-                    </button>
-                    <div id="faq-ans-1" class="hidden px-6 pb-4 text-xs text-gray-300 leading-relaxed border-t border-emerald-950/40 pt-2">
-                        لا، هذه الخدمة ليست قرضاً بنكياً بالمعنى التقليدي ولا تترتب عليها تعقيدات القروض الطويلة أو الفوائد المركبة. بل هي سلفة مشتريات مرنة ومؤقتة تساعدك على تسييل حد المشتريات المتاح لك في تابي وتمارا للاستفادة منه ككاش فوري بأبسط الإجراءات وبأمان شرعي وتجاري كامل.
+        <!-- ميزات الأمان والسرعة (لماذا تختارنا لـ فزعتك؟) -->
+        <section class="bg-slate-900/40 border border-white/5 rounded-3xl p-6 md:p-8">
+            <h3 class="text-xl font-black mb-6 text-slate-100 text-center">لماذا نحن الخيار الأضمن لفزعتك؟ 🛡️</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-right">
+                <div class="flex items-start gap-3">
+                    <span class="text-emerald-400 text-xl">✓</span>
+                    <div>
+                        <h4 class="font-bold text-slate-200">سلفة شرعية وآمنة</h4>
+                        <p class="text-xs text-slate-400">نظامنا قائم على وساطة ومشتريات تجارية مرخصة تماماً.</p>
                     </div>
                 </div>
-
-                <!-- السؤال الثاني -->
-                <div class="glass-panel rounded-2xl overflow-hidden transition-all duration-300">
-                    <button onclick="toggleFaq(2)" class="w-full py-4 px-6 text-right font-bold text-sm text-white flex justify-between items-center hover:bg-emerald-950/20">
-                        <span>هل الخدمة آمنة وقانونية ولا تؤثر على حساباتي؟</span>
-                        <span id="faq-icon-2" class="text-emerald-400 text-lg transition-transform duration-300">+</span>
-                    </button>
-                    <div id="faq-ans-2" class="hidden px-6 pb-4 text-xs text-gray-300 leading-relaxed border-t border-emerald-950/40 pt-2">
-                        نعم بكل تأكيد، نحن نعتمد على إجراءات وساطة تجارية وشراء سلع حقيقية وموثقة عبر شركائنا المعتمدين، مما يحمي حساباتك في تابي وتمارا ويضمن معاملة سليمة وآمنة بالكامل دون أي شبهة حظر أو تجميد.
+                <div class="flex items-start gap-3">
+                    <span class="text-emerald-400 text-xl">✓</span>
+                    <div>
+                        <h4 class="font-bold text-slate-200">بدون فحص سمة أو كفيل</h4>
+                        <p class="text-xs text-slate-400">لا نطلب سجلات ائتمانية معقدة، فزعتنا للجميع وبكل سهولة.</p>
                     </div>
                 </div>
-
-                <!-- السؤال الثالث -->
-                <div class="glass-panel rounded-2xl overflow-hidden transition-all duration-300">
-                    <button onclick="toggleFaq(3)" class="w-full py-4 px-6 text-right font-bold text-sm text-white flex justify-between items-center hover:bg-emerald-950/20">
-                        <span>ما هي البنوك السعودية التي تدعمون التحويل إليها؟</span>
-                        <span id="faq-icon-3" class="text-emerald-400 text-lg transition-transform duration-300">+</span>
-                    </button>
-                    <div id="faq-ans-3" class="hidden px-6 pb-4 text-xs text-gray-300 leading-relaxed border-t border-emerald-950/40 pt-2">
-                        بوابتنا تدعم التحويل الفوري والسريع لكافة البنوك العاملة في المملكة العربية السعودية (مثل مصرف الراجحي، الأهلي السعودي، بنك البلاد، بنك الرياض، بنك الإنماء وغيرها) وبدون أي تأخير.
+                <div class="flex items-start gap-3">
+                    <span class="text-emerald-400 text-xl">✓</span>
+                    <div>
+                        <h4 class="font-bold text-slate-200">سرعة متناهية في التحويل</h4>
+                        <p class="text-xs text-slate-400">تتم معالجة وإرسال الحوالات المالية البنكية في أقل من ٥ دقائق.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-3">
+                    <span class="text-emerald-400 text-xl">✓</span>
+                    <div>
+                        <h4 class="font-bold text-slate-200">دعم متكامل وموثوق</h4>
+                        <p class="text-xs text-slate-400">توجيه وإرشاد خطوة بخطوة بالواتساب لضمان راحتك وأمان بياناتك.</p>
                     </div>
                 </div>
             </div>
         </section>
-
     </main>
 
-    <footer class="w-full py-6 px-6 border-t border-emerald-950/40 bg-[#020703] text-center text-gray-500 text-xs mt-8">
-        <p class="mb-2">بوابة دايموند برو للوساطة التجارية والحلول المالية © ٢٠٢٦</p>
-        <p class="text-[10px] text-gray-600">هذه المنصة تقدم خدمات استشارية ووساطة للمشتريات وهي غير تابعة رسمياً لشركتي تابي أو تمارا. كافة العلامات التجارية مملوكة لأصحابها.</p>
+    <!-- الفوتر مع إخلاء المسؤولية القانوني للمحافظة على سلامة الحساب الإعلاني -->
+    <footer class="w-full py-8 px-6 border-t border-white/5 bg-slate-950 text-slate-500 text-xs text-center">
+        <div class="max-w-4xl mx-auto space-y-4">
+            <p class="text-slate-400 font-semibold">دايموند للوساطة والتجارة والحلول التسويقية لخدمات تقسيط المشتريات.</p>
+            <p class="max-w-2xl mx-auto text-[10px] leading-relaxed opacity-60">
+                إخلاء مسؤولية: نحن شركة وساطة وخدمات تجارية مستقلة، نساعد الأفراد على إدارة وتسييل عمليات تقسيط مشترياتهم الشخصية بالتعاون مع منافذ البيع ومزودي خدمات الدفع الآجل الشركاء. خدماتنا ليست قروضاً بنكية ولا تخضع لنظام الإقراض المصرفي، بل هي معاملات تجارية وسلفة مشتريات فورية مرخصة ونظامية 100%. تابي وتمارا هي علامات تجارية مسجلة لأصحابها ونحن نسهل إدارة طلبات المشتريات من خلال قنواتنا المعتمدة.
+            </p>
+            <p class="pt-2 text-[10px]">© 2026 جميع الحقوق محفوظة لـ دايموند برو للوساطة والحلول المالية.</p>
+        </div>
     </footer>
 
+    <!-- جافا سكريبت التفاعلية لتحديث السلايدر ورابط الواتساب بذكاء -->
     <script>
-        // نسبة السلفة المستلمة للعميل (85% كاش باك)
-        const CASH_OUT_RATE = 0.85; 
+        function calculateAdvancement(val) {
+            // تنسيق الرقم بفاصلة الآلاف وعرضه في الشاشة
+            const formattedLimit = Number(val).toLocaleString('en-US');
+            document.getElementById('slider-value-display').innerText = formattedLimit;
 
-        function calculateLiquidity() {
-            const slider = document.getElementById('limit-slider');
-            const sliderVal = parseInt(slider.value);
+            // حساب مبلغ الكاش الفوري المستلم (معدل سلفة تقريبي يتراوح بين 80% إلى 85% ليكون جاذباً وحقيقياً)
+            // رسوم التحويل والتسييل تمثل 15% فقط تقريباً
+            const cashPayout = Math.round(val * 0.85);
+            document.getElementById('cash-payout-display').innerText = cashPayout.toLocaleString('en-US');
+
+            // تحديث رابط الواتساب والرسالة تلقائياً لتوافق اختيار العميل
+            const phoneNumber = "966540674369";
+            const initialText = `السلام عليكم دايموند، أريد طلب سلفة مشتريات فورية بحد ائتماني متوفر لدي بقيمة ${val} ريال. أريد معرفة الخطوات لإتمام الفزعة واستلام الكاش الفوري.`;
+            const encodedText = encodeURIComponent(initialText);
             
-            // تحويل الأرقام لعرضها باللغة العربية
-            const formattedLimit = sliderVal.toLocaleString('ar-SA') + ' ر.س';
-            document.getElementById('slider-val-display').innerText = formattedLimit;
-
-            // حساب قيمة السلفة الفعلية المستلمة كاش بعد العمولة
-            const estimatedCash = Math.round(sliderVal * CASH_OUT_RATE);
-            const formattedCash = estimatedCash.toLocaleString('ar-SA') + ' ر.س';
-            document.getElementById('cash-estimated').innerText = formattedCash;
-
-            // بناء نص رسالة الواتساب التلقائية والمشفرة بالقيم المحددة (تأكيد السلفة)
-            const baseText = "السلام عليكم، أريد الاستفسار عن خدمة الحصول على سلفة فورية وتسييل المشتريات من دايموند برو. الحد المتوفر لدي هو: " + sliderVal + " ريال سعودي.";
-            const encodedText = encodeURIComponent(baseText);
-            const finalLink = "https://wa.me/966540674369?text=" + encodedText;
-            
-            // تطبيق الرابط المحتسب على زر الواتساب
-            document.getElementById('whatsapp-link-btn').setAttribute('href', finalLink);
+            // تغيير رابط الزر
+            document.getElementById('whatsapp-btn').href = `https://wa.me/${phoneNumber}?text=${encodedText}`;
         }
 
-        // دالة التحكم في عرض وإخفاء أسئلة الأكورديون التفاعلية
-        function toggleFaq(id) {
-            const answer = document.getElementById(`faq-ans-${id}`);
-            const icon = document.getElementById(`faq-icon-${id}`);
-            
-            if (answer.classList.contains('hidden')) {
-                answer.classList.remove('hidden');
-                icon.innerText = '-';
-                icon.style.transform = 'rotate(180deg)';
-            } else {
-                answer.classList.add('hidden');
-                icon.innerText = '+';
-                icon.style.transform = 'rotate(0deg)';
-            }
-        }
-
-        // تشغيل دالة الحساب تلقائياً عند تحميل الصفحة لتهيئة القيم الافتراضية
+        // تشغيل الحساب المبدئي لأول مرة عند تحميل الصفحة
         window.onload = function() {
-            calculateLiquidity();
+            calculateAdvancement(3000);
         }
     </script>
 </body>
