@@ -42,6 +42,28 @@
             transform: scale(1.2);
         }
     </style>
+
+    <!-- 🎯 كود بكسل سناب شات الذكي (Snapchat Pixel) -->
+    <script type="text/javascript">
+        (function(win, doc, sdk, src, obj, rules) {
+            win[obj] = win[obj] || function() {
+                (win[obj].q = win[obj].q || []).push(arguments)
+            };
+            var head = doc.getElementsByTagName('head')[0];
+            var script = doc.createElement('script');
+            script.async = 1;
+            script.src = src;
+            head.appendChild(script);
+        })(window, document, 'snaptr', 'https://sc-static.net/sce/v1/sce.min.js');
+
+        // ⚠️ يجب على العميل استبدال 'WRITE_YOUR_PIXEL_ID_HERE' بمعرف البكسل الخاص به من مدير الإعلانات
+        const SNAP_PIXEL_ID = 'WRITE_YOUR_PIXEL_ID_HERE'; 
+
+        if (SNAP_PIXEL_ID && SNAP_PIXEL_ID !== 'WRITE_YOUR_PIXEL_ID_HERE') {
+            snaptr('init', SNAP_PIXEL_ID);
+            snaptr('track', 'PAGE_VIEW');
+        }
+    </script>
 </head>
 <body class="bg-slate-950 text-white font-sans antialiased overflow-x-hiddenSelection">
 
@@ -52,7 +74,6 @@
     <header class="w-full py-4 px-6 border-b border-white/5 bg-slate-950/80 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-6xl mx-auto flex justify-between items-center">
             <div class="flex items-center gap-2">
-                <!-- أيقونة دايموند اللامعة -->
                 <span class="text-goldAccent text-2xl">♦</span>
                 <span class="font-extrabold text-xl tracking-wider text-white">دايموند <span class="text-goldAccent">للوساطة</span></span>
             </div>
@@ -74,7 +95,6 @@
 
         <!-- صندوق الحاسبة التفاعلية المطور وتوجيه الواتساب السريع -->
         <div class="bg-gradient-to-b from-slate-900 to-slate-950 rounded-3xl p-6 md:p-8 border border-white/10 shadow-2xl relative overflow-hidden mb-12">
-            <!-- غطاء أمان للتوجيه الرسمي أمام المراجعين -->
             <div class="absolute top-0 right-0 bg-goldAccent text-slate-950 text-xs font-black px-4 py-1 rounded-bl-xl uppercase tracking-wider">
                 استشارة فورية مجانية
             </div>
@@ -126,9 +146,9 @@
                     id="whatsapp-btn"
                     href="https://wa.me/966540674369?text=السلام%20عليكم%20دايموند،%20أريد%20طلب%20سلفة%20مشتريات%20بحد%20ائتماني%20حدود%203000%20ريال" 
                     target="_blank"
+                    onclick="trackWhatsAppConversion()"
                     class="inline-flex items-center justify-center gap-3 bg-neonGreen hover:bg-emerald-500 text-slate-950 font-black text-lg md:text-xl py-4 px-8 md:px-12 rounded-2xl shadow-lg shadow-emerald-500/20 transition-all duration-300 transform hover:scale-105 w-full md:w-auto"
                 >
-                    <!-- أيقونة واتساب حقيقية -->
                     <svg class="w-6 h-6 fill-slate-950" viewBox="0 0 24 24">
                         <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.965C16.488 2.01 14.04 1.012 11.622 1.01 6.549 1.01 2.42 5.093 2.417 10.122a9.821 9.821 0 0 0 1.474 5.125l-.97 3.543 3.636-.941zM17.13 14.65c-.279-.14-1.65-.81-1.905-.903-.255-.094-.44-.14-.625.14-.185.279-.718.903-.88 1.088-.162.186-.324.209-.603.07-.279-.14-1.18-.435-2.246-1.385-.83-.74-1.39-1.653-1.553-1.933-.162-.279-.017-.43.122-.569.125-.125.279-.325.418-.487.14-.162.186-.279.279-.465.093-.186.046-.349-.023-.487-.07-.14-.625-1.507-.856-2.064-.225-.54-.452-.465-.625-.474-.16-.008-.347-.01-.533-.01s-.486.07-.74.349c-.255.279-.974.953-.974 2.324 0 1.372 1 2.697 1.14 2.883.138.186 1.967 3.003 4.766 4.212.665.287 1.185.459 1.59.588.668.213 1.277.183 1.758.11.536-.08 1.65-.674 1.882-1.325.23-.651.23-1.209.162-1.325-.068-.116-.253-.185-.532-.325z"/>
                     </svg>
@@ -141,40 +161,29 @@
             </div>
         </div>
 
-        <!-- قسم كيف تعمل الخدمة؟ (٣ خطوات بسيطة مخصصة ومصاغة لتجنب الحظر) -->
+        <!-- قسم كيف تعمل الخدمة؟ -->
         <section class="mb-12">
             <h3 class="text-2xl font-black mb-6 text-center text-slate-100">سلفة مشترياتك في ٣ خطوات سريعة ⏱️</h3>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- الخطوة الأولى -->
                 <div class="bg-slate-900/60 border border-white/5 rounded-2xl p-6 text-center">
-                    <div class="w-12 h-12 rounded-full bg-goldAccent/10 text-goldAccent font-extrabold text-xl flex items-center justify-center mx-auto mb-4">
-                        1
-                    </div>
+                    <div class="w-12 h-12 rounded-full bg-goldAccent/10 text-goldAccent font-extrabold text-xl flex items-center justify-center mx-auto mb-4">1</div>
                     <h4 class="font-bold text-lg mb-2">حدد الحد المطلوب</h4>
                     <p class="text-slate-400 text-sm">حدد المبلغ المتاح لديك من حاسبة السلف التفاعلية بالصفحة ثم اضغط تواصل.</p>
                 </div>
-
-                <!-- الخطوة الثانية -->
                 <div class="bg-slate-900/60 border border-white/5 rounded-2xl p-6 text-center">
-                    <div class="w-12 h-12 rounded-full bg-goldAccent/10 text-goldAccent font-extrabold text-xl flex items-center justify-center mx-auto mb-4">
-                        2
-                    </div>
+                    <div class="w-12 h-12 rounded-full bg-goldAccent/10 text-goldAccent font-extrabold text-xl flex items-center justify-center mx-auto mb-4">2</div>
                     <h4 class="font-bold text-lg mb-2">تأكيد فوري بالواتساب</h4>
                     <p class="text-slate-400 text-sm">سيقوم المستشار المالي بمراجعة طلبك وإعطائك رابط السلفة الآمن والمعتمد رسمياً.</p>
                 </div>
-
-                <!-- الخطوة الثالثة -->
                 <div class="bg-slate-900/60 border border-white/5 rounded-2xl p-6 text-center">
-                    <div class="w-12 h-12 rounded-full bg-goldAccent/10 text-goldAccent font-extrabold text-xl flex items-center justify-center mx-auto mb-4">
-                        3
-                    </div>
+                    <div class="w-12 h-12 rounded-full bg-goldAccent/10 text-goldAccent font-extrabold text-xl flex items-center justify-center mx-auto mb-4">3</div>
                     <h4 class="font-bold text-lg mb-2">استلام الكاش</h4>
                     <p class="text-slate-400 text-sm">يتم تحويل وتسييل المبلغ على حسابك البنكي المحلي (الآيبان) فوراً خلال دقائق.</p>
                 </div>
             </div>
         </section>
 
-        <!-- ميزات الأمان والسرعة (لماذا تختارنا لـ فزعتك؟) -->
+        <!-- ميزات الأمان والسرعة -->
         <section class="bg-slate-900/40 border border-white/5 rounded-3xl p-6 md:p-8">
             <h3 class="text-xl font-black mb-6 text-slate-100 text-center">لماذا نحن الخيار الأضمن لفزعتك؟ 🛡️</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-right">
@@ -210,7 +219,7 @@
         </section>
     </main>
 
-    <!-- الفوتر مع إخلاء المسؤولية القانوني للمحافظة على سلامة الحساب الإعلاني -->
+    <!-- الفوتر -->
     <footer class="w-full py-8 px-6 border-t border-white/5 bg-slate-950 text-slate-500 text-xs text-center">
         <div class="max-w-4xl mx-auto space-y-4">
             <p class="text-slate-400 font-semibold">دايموند للوساطة والتجارة والحلول التسويقية لخدمات تقسيط المشتريات.</p>
@@ -221,28 +230,32 @@
         </div>
     </footer>
 
-    <!-- جافا سكريبت التفاعلية لتحديث السلايدر ورابط الواتساب بذكاء -->
+    <!-- جافا سكريبت التفاعلية -->
     <script>
         function calculateAdvancement(val) {
-            // تنسيق الرقم بفاصلة الآلاف وعرضه في الشاشة
             const formattedLimit = Number(val).toLocaleString('en-US');
             document.getElementById('slider-value-display').innerText = formattedLimit;
 
-            // حساب مبلغ الكاش الفوري المستلم (معدل سلفة تقريبي يتراوح بين 80% إلى 85% ليكون جاذباً وحقيقياً)
-            // رسوم التحويل والتسييل تمثل 15% فقط تقريباً
             const cashPayout = Math.round(val * 0.85);
             document.getElementById('cash-payout-display').innerText = cashPayout.toLocaleString('en-US');
 
-            // تحديث رابط الواتساب والرسالة تلقائياً لتوافق اختيار العميل
             const phoneNumber = "966540674369";
             const initialText = `السلام عليكم دايموند، أريد طلب سلفة مشتريات فورية بحد ائتماني متوفر لدي بقيمة ${val} ريال. أريد معرفة الخطوات لإتمام الفزعة واستلام الكاش الفوري.`;
             const encodedText = encodeURIComponent(initialText);
             
-            // تغيير رابط الزر
             document.getElementById('whatsapp-btn').href = `https://wa.me/${phoneNumber}?text=${encodedText}`;
         }
 
-        // تشغيل الحساب المبدئي لأول مرة عند تحميل الصفحة
+        // 🎯 تتبع النقرة كحدث مبيعات/تحويل في بكسل السناب
+        function trackWhatsAppConversion() {
+            if (typeof snaptr !== 'undefined' && SNAP_PIXEL_ID !== 'WRITE_YOUR_PIXEL_ID_HERE') {
+                // إرسال حدث 'CONTACT' أو 'SUBSCRIBE' ليعتبره السناب شات تحويلاً ناجحاً (Conversion)
+                snaptr('track', 'CONTACT', {
+                    'description': 'WhatsApp Lead generated from calculator button'
+                });
+            }
+        }
+
         window.onload = function() {
             calculateAdvancement(3000);
         }
